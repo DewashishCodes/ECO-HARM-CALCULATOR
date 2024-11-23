@@ -1,0 +1,827 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+body{
+
+    margin: 0;
+    padding: 0;
+    background-color:rgb(39, 39, 39);
+    font-family: "Skranji", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    box-sizing: border-box;
+    
+}
+.nav{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(3, 65, 3);
+    text-align: center;
+    font-size: 80px;
+}
+h1 {
+    text-align: center;
+    color:darkgoldenrod;
+    font-size: 2.5em;
+}
+
+h2 {
+    color:antiquewhite;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color:rgb(3, 65, 3);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid #2e8b57;
+    margin-top: 30px;
+    transition: 0.3s ease;
+    
+}
+.form-container:hover{
+    -webkit-box-shadow:0px 0px 64px 0px rgba(45,255,196,0.51);
+    -moz-box-shadow: 0px 0px 64px 0px rgba(45,255,196,0.51);
+    box-shadow: 0px 0px 64px 0px rgba(45,255,196,0.51);
+}
+
+.question {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+    color:antiquewhite;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    color: white;
+}
+
+select.input-field, input[type="number"].input-field {
+    background-color:#313131;
+}
+
+select.input-field {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #2e8b57;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #01633c;
+}
+
+/* Carousel Section */
+.carousel {
+    display: none;
+}
+
+.carousel.active {
+    display: block;
+}
+
+.carousel-container {
+    position: relative;
+}
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    padding: 10px 15px;
+    margin: 0 10px;
+    background-color: darkgoldenrod;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+    background-color: #c6e9d0;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #2e8b57;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #23845d;
+}
+
+.results-section {
+    background-color: rgb(3, 65, 3);
+    color: white;
+    padding: 0px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border: 5px solid #2e8b57;
+    display: none;
+}
+.results-section h2{
+    text-align: center;
+}
+#totalFootprint{
+    background: #FF0000;
+background: linear-gradient(to left, #FF0000 0%, #FFFF00 50%, #FF0000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 50px;
+}
+
+.results-summary {
+    margin-bottom: 20px;
+    border: 2px solid white;
+    height: 300px;
+    border-radius: 20px;
+    width: 300px;
+    position: relative;
+    left: 38%;
+    margin-top: 5px;
+}
+
+.energyimg{
+  height: 250px;
+  width:250px;
+  background: url("./Untitled\ design.png");
+  background-size: cover;
+  position: relative;
+  left: 6%;
+  border: 2px solid white;
+  border-radius: 20px;
+}
+
+.results-summary p {
+    font-size: 1.2em;
+    color: antiquewhite;
+    text-align: center;
+}
+
+.results-summary p strong {
+    font-weight: 600;
+    text-align: center;
+}
+
+.results-breakdown ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap; 
+    justify-content: center; /* Center items horizontally */
+    align-items: center; 
+}
+
+.results-breakdown li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    width: 100%;
+    border-radius: 20px;
+    
+    color: antiquewhite;
+    /* White box */
+     /* Text color to contrast with the white background */
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners for the box */
+    margin-bottom: 10px; /* Space between boxes */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for the box */
+    font-size: 1.2em; /* Slightly larger font size */
+     /* For aligning text and other content horizontally */
+    justify-content: space-between; /* Space between label and value */
+    align-items: center; /* Center-align items vertically */
+    border: 2px solid white; /* Border to match theme */
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.results-breakdown li:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  z-index: 1;  /* Bring the hovered item to the front */
+    filter: none;
+}
+.results-breakdown li:not(:hover) {
+  filter: blur(5px); /* Apply blur to non-hovered items */
+}
+
+.results-breakdown li strong {
+    color: darkgoldenrod;
+    text-align: center;
+    
+}
+
+.results-breakdown li span {
+  font-weight: bold;
+  color: white; /* Match the green theme for values */
+}
+
+
+
+button#resetResults {
+    padding: 12px 20px;
+    background-color: #2e8b57;
+    color: white;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+}
+
+button#resetResults:hover {
+    background-color: #23845d;
+}
+
+/* Graph */
+.graph {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* For the Comparison section */
+#comparison {
+    color: darkgoldenrod;
+    font-weight: bold;
+}
+
+/* From Uiverse.io by Admin12121 */ 
+@keyframes scaleUpDown {
+    0%, 100% {
+      transform: scaleY(1) scaleX(1);
+    }
+  
+    50%, 90% {
+      transform: scaleY(1.1);
+    }
+  
+    75% {
+      transform: scaleY(0.95);
+    }
+  
+    80% {
+      transform: scaleX(0.95);
+    }
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: skewX(0) scale(1);
+    }
+  
+    50% {
+      transform: skewX(5deg) scale(0.9);
+    }
+  }
+  
+  @keyframes particleUp {
+    0% {
+      opacity: 0;
+    }
+  
+    20% {
+      opacity: 1;
+    }
+  
+    80% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      top: -100%;
+      transform: scale(0.5);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      background-color: #ef5a00;
+    }
+  
+    50% {
+      background-color: #ff7800;
+    }
+  }
+  
+  .fire {
+    position: relative;
+    
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .fire-center {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: scaleUpDown 3s ease-out;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  
+  .fire-center .main-fire {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(farthest-corner at 10px 0, #d43300 0%, #ef5a00 95%);
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  
+  .fire-center .particle-fire {
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    width: 10px;
+    height: 10px;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  
+  .fire-right {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    animation: shake 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  
+  .fire-right .main-fire {
+    position: absolute;
+    top: 15%;
+    right: -25%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  
+  .fire-right .particle-fire {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  
+  .fire-left {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: shake 3s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+  
+  .fire-left .main-fire {
+    position: absolute;
+    top: 15%;
+    left: -20%;
+    width: 80%;
+    height: 80%;
+    background-color: #ef5a00;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 60% 40%;
+    filter: drop-shadow(0 0 10px #d43322);
+  }
+  
+  .fire-left .particle-fire {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 10%;
+    height: 10%;
+    background-color: #ef5a00;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px #d43322);
+    animation: particleUp 3s infinite ease-out 0;
+    animation-fill-mode: both;
+  }
+  
+  .fire-bottom .main-fire {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 75%;
+    height: 75%;
+    background-color: #ff7800;
+    transform: scaleX(0.8) rotate(45deg);
+    border-radius: 0 40% 100% 40%;
+    filter: blur(10px);
+    animation: glow 2s ease-out 0;
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+  }
+
+  .resetbtn{
+    position: relative;
+    left: 45%;
+    margin-top: 30px;
+  }
+
+  .rec{
+    width: 100%;
+    padding: 20px;
+    border: 5px solid white;
+    border-radius: 20px;
+
+  }
+/* Circular Tips Container */
+.circular-tips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 5px solid #4caf50;
+  /* background: linear-gradient(145deg, #4caf50, #88e069); */
+  background: linear-gradient(to bottom, #b4e391 0%,#61c419 50%,#b4e391 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  left: 10%;
+  animation: customAni 2s ease 0s infinite normal none;
+  
+}
+/* Copy this code after the above code */
+@keyframes customAni {
+  0%,
+  100% {
+	transform: translateX(0%);
+	transform-origin: 50% 50%;
+  }
+
+  15% {
+	transform: translateX(-30px) rotate(-6deg);
+  }
+
+  30% {
+	transform: translateX(15px) rotate(6deg);
+  }
+
+  45% {
+	transform: translateX(-15px) rotate(-3.6deg);
+  }
+
+  60% {
+	transform: translateX(9px) rotate(2.4deg);
+  }
+
+  75% {
+	transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
+
+/* Individual Tips */
+.tip {
+  position: absolute;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tip.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Pop-out Effect */
+.circular-tips::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4), transparent);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+/* Animation for Pulse Effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.bottom{
+  display: flex;
+
+}
+
+.left_box{
+  flex:1;
+  
+}
+
+.right_box{
+  flex: 3;
+  
+  text-align: center;
+}
+
+.right_box h2{
+  background: #FF0000;
+background: linear-gradient(to left, #FF0000 0%, #FFFF00 50%, #FF0000 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+#cert_name{
+  background:#2e8b57;
+  height: 30px;
+  color: wheat;
+  font-weight: 600;
+}
+
+/* Styles for the certificate button */
+.certificate-button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #17795E;
+  background-color: #209978;
+  left: 50%;
+  
+  
+}
+
+.certificate-button, .certificate-button__icon, .certificate-button__text {
+  transition: all 0.3s;
+}
+
+.certificate-button .certificate-button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  right: 17px;
+}
+
+.certificate-button .certificate-button__icon {
+  position: absolute;
+  
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #17795E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-button .certificate-svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.certificate-button:hover {
+  background: #17795E;
+}
+
+.certificate-button:hover .certificate-button__text {
+  color: transparent;
+}
+
+.certificate-button:hover .certificate-button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.certificate-button:active .certificate-button__icon {
+  background-color: #146c54;
+}
+
+.certificate-button:active {
+  border: 1px solid #146c54;
+}
+
+/* Base Styles (already provided, no changes needed here) */
+/* Additional Responsive Styles */
+
+/* For small devices (phones, less than 600px) */
+@media only screen and (max-width: 600px) {
+  .nav {
+      font-size: 50px; /* Reduce navigation font size */
+      height: auto; /* Adjust height for better fit */
+      
+      padding: 10px;
+      width: 100%;
+      position: relative;
+      left: 3%;
+  }
+
+  h1 {
+      font-size: 2em; /* Smaller header */
+  }
+
+  h2 {
+      font-size: 1.2em; /* Smaller sub-header */
+  }
+
+  .form-container {
+      padding: 15px;
+      margin-top: 20px;
+  }
+  .form-container input{
+    overflow-x: hidden;
+  }
+
+  .results-section{
+    width: 100vw;
+    margin-right: 0;
+    margin-left: 15px;
+  }
+
+  .results-summary {
+      width: 80%; /* Adjust width for smaller screens */
+      height: auto; /* Make height flexible */
+      left: 10%; /* Center align */
+  }
+
+  .energyimg {
+      height: 150px;
+      width: 150px;
+      left: 25%; /* Center align */
+  }
+
+  .results-breakdown li {
+      font-size: 1em; /* Adjust font size */
+      padding: 10px; /* Reduce padding */
+      margin-bottom: 8px; /* Reduce gap between items */
+      overflow: hidden;
+  }
+
+  button {
+      font-size: 1em; /* Reduce button font size */
+      padding: 10px;
+  }
+
+  .circular-tips {
+      width: 200px; /* Smaller circular tips */
+      height: 200px;
+      left: 23%; /* Adjust alignment */
+  }
+
+  .resetbtn {
+      left: 35%; /* Center align reset button */
+  }
+
+  .bottom {
+      flex-direction: column; /* Stack left and right boxes */
+      align-items: center; /* Center-align items */
+  }
+
+  .right_box, .left_box {
+      flex: none; /* Reset flex for stacking */
+      width: 100%; /* Make them full width */
+      text-align: center; /* Center text */
+  }
+
+  .certificate-button__text{
+    position: relative;
+    left: 5%;
+  }
+}
+
+/* For tablets (600px to 900px) */
+@media only screen and (min-width: 600px) and (max-width: 900px) {
+  .nav {
+      font-size: 65px; /* Medium font size */
+  }
+
+  .form-container {
+      padding: 18px;
+  }
+
+  .results-summary {
+      width: 60%; /* Adjust width for tablets */
+      height: auto;
+      left: 20%; /* Center align */
+  }
+
+  .energyimg {
+      height: 200px;
+      width: 200px;
+      left: 20%; /* Center align */
+  }
+
+  .results-breakdown li {
+      font-size: 1.1em; /* Slightly smaller font */
+  }
+
+  .circular-tips {
+      width: 230px; /* Medium circular tips */
+      height: 230px;
+  }
+
+  .resetbtn {
+      left: 42%; /* Center align reset button */
+  }
+}
+
+/* For large devices (desktops, greater than 900px) */
+@media only screen and (min-width: 900px) {
+  .nav {
+      font-size: 80px; /* Default navigation size */
+  }
+
+  .form-container {
+      padding: 20px;
+  }
+
+  .results-summary {
+      width: 50%; /* Adjust width for larger screens */
+      height: auto;
+      left: 25%; /* Center align */
+  }
+
+  .energyimg {
+      height: 250px;
+      width: 250px;
+      left: 10%; /* Default position */
+  }
+
+  .results-breakdown li {
+      font-size: 1.2em; /* Default font size */
+  }
+
+  .circular-tips {
+      width: 250px; /* Default circular tips */
+      height: 250px;
+  }
+}

@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eco Impact Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <!--FONT LINKINGS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=DM+Serif+Text:ital@0;1&family=DynaPuff:wght@400..700&family=Love+Ya+Like+A+Sister&family=Lovers+Quarrel&family=Nabla:EDPT,EHLT@0..200,0..24&family=Skranji:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="./ICON.webp">
+
+  </head>
+  <body>
+    <div class="nav">ECO-Harm Calc</div>
+    <div class="form-container">
+      <h2>Answer all these questions to know your carbon footprint</h2>
+      <form id="carbonFootprintForm">
+        <div class="carousel-container">
+          <!-- Household Energy Usage -->
+          <div class="carousel active" id="energyUsage">
+            <h2>Household Energy Usage</h2>
+            <label for="electricityBill" class="question"
+              >What is your average monthly electricity bill (in INR)?</label
+            >
+            <input
+              type="number"
+              id="electricityBill"
+              class="input-field"
+              name="electricityBill"
+            />
+
+            <label for="electricityConsumption" class="question"
+              >How many kWh of electricity do you consume on average per
+              month?</label
+            >
+            <select
+              id="electricityConsumption"
+              class="input-field"
+              name="electricityConsumption"
+            >
+              <option value="0-100">0-100 kWh</option>
+              <option value="101-200">101-200 kWh</option>
+              <option value="201-300">201-300 kWh</option>
+              <option value="300+">300+ kWh</option>
+            </select>
+
+            <label for="energyEfficientAppliances" class="question"
+              >Do you use energy-efficient appliances?</label
+            >
+            <select
+              id="energyEfficientAppliances"
+              class="input-field"
+              name="energyEfficientAppliances"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Food Consumption -->
+          <div class="carousel" id="foodConsumption">
+            <h2>Food Consumption</h2>
+            <label for="meatConsumption" class="question"
+              >How often do you consume meat (chicken, beef, etc.)?</label
+            >
+            <select
+              id="meatConsumption"
+              class="input-field"
+              name="meatConsumption"
+            >
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="occasionally">Occasionally</option>
+              <option value="never">Never</option>
+            </select>
+
+            <label for="dairyConsumption" class="question"
+              >How often do you consume dairy products (milk, cheese,
+              etc.)?</label
+            >
+            <select
+              id="dairyConsumption"
+              class="input-field"
+              name="dairyConsumption"
+            >
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="occasionally">Occasionally</option>
+              <option value="never">Never</option>
+            </select>
+
+            <label for="organicFood" class="question"
+              >Do you prefer organic food?</label
+            >
+            <select id="organicFood" class="input-field" name="organicFood">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Water Consumption -->
+          <div class="carousel" id="waterConsumption">
+            <h2>Water Consumption</h2>
+            <label for="waterUsage" class="question"
+              >What is your average daily water usage (in liters)?</label
+            >
+            <input
+              type="number"
+              id="waterUsage"
+              class="input-field"
+              name="waterUsage"
+            />
+
+            <label for="waterSavingDevices" class="question"
+              >Do you use water-saving devices (low-flow taps, showers,
+              etc.)?</label
+            >
+            <select
+              id="waterSavingDevices"
+              class="input-field"
+              name="waterSavingDevices"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Waste Recycling -->
+          <div class="carousel" id="wasteRecycling">
+            <h2>Waste Recycling</h2>
+            <label for="recyclingHabits" class="question"
+              >Do you separate your waste for recycling?</label
+            >
+            <select
+              id="recyclingHabits"
+              class="input-field"
+              name="recyclingHabits"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+
+            <label for="plasticUsage" class="question"
+              >How often do you use single-use plastic?</label
+            >
+            <select id="plasticUsage" class="input-field" name="plasticUsage">
+              <option value="daily">Daily</option>
+              <option value="occasionally">Occasionally</option>
+              <option value="rarely">Rarely</option>
+              <option value="never">Never</option>
+            </select>
+          </div>
+
+          <!-- Consumer Goods and Lifestyle -->
+          <div class="carousel" id="consumerGoodsLifestyle">
+            <h2>Consumer Goods and Lifestyle</h2>
+            <label for="clothingPurchases" class="question"
+              >How often do you purchase new clothes or fashion items?</label
+            >
+            <select
+              id="clothingPurchases"
+              class="input-field"
+              name="clothingPurchases"
+            >
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+              <option value="rarely">Rarely</option>
+            </select>
+
+            <label for="electronicsPurchases" class="question"
+              >How often do you purchase new electronics?</label
+            >
+            <select
+              id="electronicsPurchases"
+              class="input-field"
+              name="electronicsPurchases"
+            >
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+              <option value="rarely">Rarely</option>
+            </select>
+
+            <label for="recycledGoods" class="question"
+              >Do you prefer purchasing recycled or upcycled products?</label
+            >
+            <select id="recycledGoods" class="input-field" name="recycledGoods">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Carbon Offsetting -->
+          <div class="carousel" id="carbonOffsetting">
+            <h2>Carbon Offsetting</h2>
+            <label for="carbonOffset" class="question"
+              >Do you participate in carbon offset programs?</label
+            >
+            <select id="carbonOffset" class="input-field" name="carbonOffset">
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <!-- Annual Travel -->
+          <div class="carousel" id="annualTravel">
+            <h2>Annual Travel</h2>
+            <label for="domesticTravel" class="question"
+              >How often do you travel domestically (within India)?</label
+            >
+            <select
+              id="domesticTravel"
+              class="input-field"
+              name="domesticTravel"
+            >
+              <option value="monthly">Monthly</option>
+              <option value="quarterly">Quarterly</option>
+              <option value="annually">Annually</option>
+              <option value="rarely">Rarely</option>
+            </select>
+
+            <label for="internationalTravel" class="question"
+              >How often do you travel internationally?</label
+            >
+            <select
+              id="internationalTravel"
+              class="input-field"
+              name="internationalTravel"
+            >
+              <option value="never">Never</option>
+              <option value="occasionally">Occasionally</option>
+              <option value="annually">Annually</option>
+              <option value="multiple">Multiple times per year</option>
+            </select>
+          </div>
+
+          <!-- Building Infrastructure -->
+          <div class="carousel" id="buildingInfrastructure">
+            <h2>Building Infrastructure</h2>
+            <label for="buildingMaterials" class="question"
+              >What type of building materials does your home primarily
+              use?</label
+            >
+            <select
+              id="buildingMaterials"
+              class="input-field"
+              name="buildingMaterials"
+            >
+              <option value="concrete">Concrete</option>
+              <option value="wood">Wood</option>
+              <option value="steel">Steel</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <!-- Social and Economic Factors -->
+          <div class="carousel" id="socialEconomicFactors">
+            <h2>Social and Economic Factors</h2>
+            <label for="communityInvolvement" class="question"
+              >Are you actively involved in your local community (volunteer
+              work, etc.)?</label
+            >
+            <select
+              id="communityInvolvement"
+              class="input-field"
+              name="communityInvolvement"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+
+            <label for="sustainableBusiness" class="question"
+              >Do you support businesses with sustainable practices?</label
+            >
+            <select
+              id="sustainableBusiness"
+              class="input-field"
+              name="sustainableBusiness"
+            >
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="navigation-buttons">
+          <button type="button" id="prevBtn" onclick="moveCarousel(-1)">
+            Previous
+          </button>
+          <button type="button" id="nextBtn" onclick="moveCarousel(1)">
+            Next
+          </button>
+        </div>
+        <button
+          type="button"
+          class="submit-button"
+          onclick="logFormData(event)"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="resultsSection" style="display: none">
+      <h2>Your Carbon Footprint Results</h2>
+
+      <div class="results-summary">
+        <br /><br /><br />
+        <div class="fire">
+          <div class="fire-left">
+            <div class="main-fire"></div>
+            <div class="particle-fire"></div>
+          </div>
+          <div class="fire-center">
+            <div class="main-fire"></div>
+            <div class="particle-fire"></div>
+          </div>
+          <div class="fire-right">
+            <div class="main-fire"></div>
+            <div class="particle-fire"></div>
+          </div>
+          <div class="fire-bottom">
+            <div class="main-fire"></div>
+          </div>
+        </div>
+        <p>
+          <span id="totalFootprint">0</span><br />
+          kg CO2 per year
+        </p>
+        <p>
+          <strong><span id="comparison"></span> </strong>
+        </p>
+      </div>
+
+      <div class="results-breakdown">
+        <h3>Breakdown by Category:</h3>
+        <ul>
+          <li>
+            <strong>Energy:<br /></strong>
+            <span
+              id="energyFootprint"
+              style="
+                background: #00ff00;
+                background: linear-gradient(to left, #00ff00 0%, #00ffff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 100px;
+              "
+              >0</span
+            >
+            <br />kg CO2
+          </li>
+          <li>
+            <strong>Food:<br /></strong>
+            <span
+              id="foodFootprint"
+              style="
+                background: #ffb76b;
+                background: linear-gradient(
+                  to right,
+                  #ffb76b 0%,
+                  #ffa73d 30%,
+                  #ff7c00 60%,
+                  #ff7f04 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 100px;
+              "
+              >0</span
+            >
+            <br />kg CO2
+          </li>
+          <li>
+            <strong>Travel:<br /></strong>
+            <span
+              id="travelFootprint"
+              style="
+                background: #008080;
+                background: linear-gradient(
+                  to left,
+                  #008080 0%,
+                  #ffffff 25%,
+                  #05c1ff 50%,
+                  #ffffff 75%,
+                  #005757 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 100px;
+              "
+              >0</span
+            >
+            <br />kg CO2
+          </li>
+          <li>
+            <strong>Waste Recycling:<br /></strong>
+            <span
+              id="wasteFootprint"
+              style="
+                background: #25cc0f;
+                background: linear-gradient(
+                  to bottom right,
+                  #25cc0f 0%,
+                  #9e3212 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 100px;
+              "
+              >0</span
+            >
+            <br />kg CO2
+          </li>
+          <li>
+            <strong>Water Recycling:<br /></strong>
+            <span
+              id="waterFootprint"
+              style="
+                background: #b7deed;
+                background: linear-gradient(
+                  to right,
+                  #b7deed 0%,
+                  #71ceef 25%,
+                  #21b4e2 75%,
+                  #b7deed 100%
+                );
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 100px;
+              "
+              >0</span
+            >
+            <br />kg CO2
+          </li>
+        </ul>
+      </div>
+
+      <!--<div class="tips-carousel">
+          <div class="tips-item">
+            <span>Switch to LED lights to save 100 kg CO2 annually.</span>
+          </div>
+          <div class="tips-item">
+            <span>Reduce meat consumption to save 200 kg CO2 per year.</span>
+          </div>
+          <div class="tips-item">
+            <span>Plant trees to offset your footprint by up to 500 kg CO2.</span>
+          </div>
+          <div class="tips-item">
+            <span>Use public transport to reduce your carbon footprint.</span>
+          </div>
+          <div class="tips-item">
+            <span>Install a smart thermostat to reduce heating and cooling costs.</span>
+          </div>
+          <div class="tips-item">
+            <span>Switch to a plant-based diet to significantly reduce CO2 emissions.</span>
+          </div>
+          <div class="tips-item">
+            <span>Reduce water waste by installing low-flow fixtures in your home.</span>
+          </div>
+          <div class="tips-item">
+            <span>Recycle paper, plastic, and glass to reduce landfill waste.</span>
+          </div>
+          <div class="tips-item">
+            <span>Consider buying secondhand clothing to reduce fashion waste.</span>
+          </div>
+          <div class="tips-item">
+            <span>Unplug electronics when not in use to conserve energy.</span>
+          </div>
+          <div class="tips-item">
+            <span>Opt for digital subscriptions to reduce the need for paper products.</span>
+          </div>
+          <div class="tips-item">
+            <span>Buy products with minimal or eco-friendly packaging.</span>
+          </div>
+          <div class="tips-item">
+            <span>Support local farmers to reduce the carbon footprint of food transport.</span>
+          </div>
+          <div class="tips-item">
+            <span>Take shorter showers to conserve water and energy.</span>
+          </div>
+          <div class="tips-item">
+            <span>Plant a garden to help absorb CO2 and improve local biodiversity.</span>
+          </div>
+          <div class="tips-item">
+            <span>Compost organic waste instead of sending it to a landfill.</span>
+          </div>
+          <div class="tips-item">
+            <span>Switch to rechargeable batteries instead of single-use ones.</span>
+          </div>
+          <div class="tips-item">
+            <span>Install solar panels to reduce reliance on fossil fuels.</span>
+          </div>
+          <div class="tips-item">
+            <span>Use energy-efficient appliances to reduce electricity consumption.</span>
+          </div>
+          <div class="tips-item">
+            <span>Opt for hybrid or electric vehicles to reduce carbon emissions.</span>
+          </div>
+          <div class="tips-item">
+            <span>Choose eco-friendly cleaning products that are safe for the environment.</span>
+          </div>
+          <div class="tips-item">
+            <span>Use natural light as much as possible to reduce energy consumption.</span>
+          </div>
+          <div class="tips-item">
+            <span>Work from home when possible to reduce commuting emissions.</span>
+          </div>
+          <div class="tips-item">
+            <span>Buy energy-efficient light bulbs to reduce electricity usage.</span>
+          </div>
+          <div class="tips-item">
+            <span>Offset your carbon footprint by purchasing carbon credits.</span>
+          </div>
+          <div class="tips-item">
+            <span>Limit your use of disposable plastics and opt for reusable items.</span>
+          </div>
+          <div class="tips-item">
+            <span>Use eco-friendly transportation options like biking or walking.</span>
+          </div>
+          <div class="tips-item">
+            <span>Implement energy-saving habits like turning off lights when leaving a room.</span>
+          </div>
+          <div class="tips-item">
+            <span>Purchase sustainable and ethically produced goods whenever possible.</span>
+          </div>
+          <div class="tips-item">
+            <span>Choose paperless billing to reduce paper waste.</span>
+          </div>
+        </div> -->
+      <div class="bottom">
+        <div class="left_box">
+          <div class="circular-tips">
+            <div class="tip active">
+              💡 Switch to LED lights to save 100 kg CO2 annually.
+            </div>
+            <div class="tip">
+              🥗 Reduce meat consumption to save 200 kg CO2 annually.
+            </div>
+            <div class="tip">
+              🌳 Plant trees to offset your footprint by up to 500 kg CO2.
+            </div>
+            <div class="tip">
+              🚴‍♀️ Opt for cycling or walking for short trips.
+            </div>
+            <div class="tip">
+              📦 Recycle and reuse to save resources and reduce waste.
+            </div>
+            <div class="tip">
+              🌊 Conserve water by fixing leaks and using efficient appliances.
+            </div>
+            <div class="tip">
+              🛍️ Use reusable bags to minimize plastic pollution.
+            </div>
+            <div class="tip">
+              📴 Turn off appliances when not in use to save energy.
+            </div>
+            <div class="tip">
+              🚗 Carpool or use public transport to reduce emissions.
+            </div>
+          </div>
+        </div>
+        <div class="right_box">
+          <h2>Take a Pledge for a Greener Future!</h2>
+          <p>Join the mission to reduce your carbon footprint and work towards a cleaner, healthier planet. Make your pledge today and download your certificate as a token of commitment!</p>
+          <p>Tell us your name: &nbsp;<input type="text" id="cert_name" placeholder="John Doe"></p>
+          <button class="certificate-button" type="button" onclick="generateCertificate()"><!-- <a  href="./CERT_TESTING/cert.html"> -->
+            <span class="certificate-button__text"><i class="fas fa-download"></i>Download</span>
+          </button>
+        </div>
+      </div>
+       
+      <button onclick="resetForm()" class="resetbtn">Reset Form</button>
+      <footer style="background-color: #f9f9f9; padding: 10px 20px; border-top: 1px solid #ddd; font-size: 14px; color: #333; text-align: center; margin-top: 5px;">
+        <p style="margin: 0;">
+            Designed and Developed by 
+            <a href="https://www.linkedin.com/in/dewashish-lambore-927048318/" target="_blank" rel="noopener noreferrer" style="color: #0077b5; text-decoration: none; font-weight: 500;">
+                Dewashish Lambore
+            </a>
+        </p>
+    </footer>
+    
+      
+
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
+</html>
