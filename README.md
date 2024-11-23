@@ -22,15 +22,7 @@
 
   
 
-  <h2>📷 Screenshots</h2>
-  <div class="screenshot">
-    <h3>🌟 Main Interface</h3>
-    <img src="https://via.placeholder.com/800x400?text=Main+Interface+Screenshot" alt="Main Interface Screenshot">
-  </div>
-  <div class="screenshot">
-    <h3>🎓 Certificate</h3>
-    <img src="https://via.placeholder.com/800x400?text=Certificate+Screenshot" alt="Certificate Screenshot">
-  </div>
+  
 
   <h2>📚 Emission Factors Used</h2>
   <table border="1" cellpadding="8" cellspacing="0">
