@@ -1,5 +1,5 @@
 <h1>🌍 Eco Harm Calculator</h1>
-<h2><a href="https://www.myharmcalc](https://myecoharmcalc.web.app">Go to myecoharmcalc.com</a></h2>
+<h2><a href="https://www.myharmcalc](https://myecoharmcalc.web.app">🚀Go to myecoharmcalc.com</a></h2>
   <p>
     <strong>A user-friendly web application to calculate your environmental impact and explore actionable ways to reduce it.</strong>
     The tool assesses multiple factors such as energy consumption, water usage, travel habits, and waste management to compute a detailed carbon footprint.
