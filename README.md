@@ -1,119 +1,83 @@
-<h1>🌍 Eco Harm Calculator</h1>
-<h2><a href="https://www.myharmcalc](https://myecoharmcalc.web.app">🚀Go to myecoharmcalc.com</a></h2>
-  <p>
-    <strong>A user-friendly web application to calculate your environmental impact and explore actionable ways to reduce it.</strong>
-    The tool assesses multiple factors such as energy consumption, water usage, travel habits, and waste management to compute a detailed carbon footprint.
-  </p>
+<h1>SymbiNav 🚀</h1>
+<h2><a href="https://symbinav.web.app">🌐 Live here
+</a></h2>
+<p><strong>SymbiNav</strong> is a dynamic web application designed to help students manage their academic schedules effectively. It displays real-time updates for the next class, faculty details, and class locations, all while ensuring accessibility and ease of use.</p>
 
-  <h2>📋 Features</h2>
-  <ul>
-    <li>🌱 <strong>Carbon Footprint Breakdown:</strong> Calculates your impact from electricity, food, travel, water usage, and waste.</li>
-    <li>💡 <strong>Actionable Insights:</strong> Provides tips for reducing your footprint.</li>
-    <li>📊 <strong>Real-Time Results:</strong> Instant calculations with dynamic updates.</li>
-    <li>🎨 <strong>Certificate Generator:</strong> Generate and download a personalized certificate based on your results.</li>
-    <li>💻 <strong>Responsive Design:</strong> Works seamlessly on desktop and mobile.</li>
-  </ul>
+<h2>📋 Features</h2>
+<ul>
+  <li>⏰ <strong>Dynamic Scheduling:</strong> Displays the next class, location, and faculty dynamically based on the selected branch and section.</li>
+  <li>📰 <strong>Real-Time News Updates:</strong> Admins can update marquee news via a modal, and changes persist across all devices using Firestore.</li>
+  <li>🔥 <strong>Firebase Integration:</strong> Uses Firebase Firestore for real-time database management and Firebase Hosting for deployment.</li>
+  <li>🎨 <strong>Modern UI:</strong> A clean, responsive design with gradient-based themes and Font Awesome icons.</li>
+</ul>
 
-  <h2>🚀 Technologies Used</h2>
-  <ul>
-    <li><strong>Frontend:</strong> HTML5, CSS3, JavaScript</li>
-    <li><strong>Libraries:</strong> <a href="https://github.com/parallax/jsPDF">jspdf</a>, <a href="https://html2canvas.hertzen.com/">html2canvas</a></li>
-    <li><strong>Hosting:</strong> Firebase</li>
-  </ul>
+<h2>🚀 Technologies Used</h2>
+<ul>
+  <li><strong>Frontend:</strong> HTML5, CSS3 (Flexbox & Grid), JavaScript (ES6 Modules)</li>
+  <li><strong>Backend:</strong> Firebase Hosting and Firestore Database</li>
+  <li><strong>Libraries:</strong> Font Awesome (icons)</li>
+</ul>
 
-  
+<h2>🖥️ Responsive Design</h2>
+<p>The application is fully responsive and optimized for:</p>
+<ul>
+  <li><strong>Desktops:</strong> Full functionality with enhanced UI.</li>
+  <li><strong>Mobile Devices:</strong> Adaptive layout for a smooth experience.</li>
+</ul>
 
-  
-
-  <h2>📚 Emission Factors Used</h2>
-  <table border="1" cellpadding="8" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Source</th>
-        <th>Factor (kg CO₂)</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Electricity</td>
-        <td>0.85/kg CO₂ per kWh</td>
-        <td>Based on global averages</td>
-      </tr>
-      <tr>
-        <td>Water</td>
-        <td>0.0025/kg CO₂ per liter</td>
-        <td>Adjusted for water-saving devices</td>
-      </tr>
-      <tr>
-        <td>Domestic Travel</td>
-        <td>0.2/kg CO₂ per km</td>
-        <td>Includes flights and driving</td>
-      </tr>
-      <tr>
-        <td>International Travel</td>
-        <td>0.32/kg CO₂ per km</td>
-        <td>Flights only</td>
-      </tr>
-      <tr>
-        <td>Waste (Recycling)</td>
-        <td>±200/year</td>
-        <td>Recycling reduces footprint</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2>📈 Future Plans</h2>
-  <ul>
-    <li>🌐 <strong>Localization:</strong> Support for multiple languages.</li>
-    <li>📉 <strong>Advanced Analytics:</strong> Monthly trends and visualizations.</li>
-    <li>🏆 <strong>Leaderboard:</strong> Gamify eco-awareness by comparing results globally.</li>
-  </ul>
-
-  <h2>🤝 Contributing</h2>
-  <p>
-    We welcome contributions!
-    <ol>
-      <li>Fork the repo.</li>
-      <li>Create a new branch:
-        <pre><code>git checkout -b feature-name</code></pre>
-      </li>
-      <li>Commit changes and open a pull request.</li>
-    </ol>
-  </p>
 <h2>🛠️ Setup and Usage</h2>
-  <ol>
-    <li><strong>Clone the repository</strong>
-      <pre><code>git clone https://github.com/your-username/eco-harm-calculator.git
-cd eco-harm-calculator</code></pre>
-    </li>
-    <li><strong>Install dependencies</strong> (if any future dependencies are added)
-      <pre><code>npm install</code></pre>
-    </li>
-    <li><strong>Run the app locally</strong>
-      <p>Open <code>index.html</code> in your browser or serve it via a local server.</p>
-    </li>
-    <li><strong>Firebase Hosting (Optional)</strong>
-      <pre><code>npm install -g firebase-tools
+<ol>
+  <li><strong>Clone the repository:</strong>
+    <pre><code>git clone https://github.com/your-username/symbinav.git
+cd symbinav</code></pre>
+  </li>
+  <li><strong>Set up Firebase:</strong>
+    <p>Create a Firebase project and add your web app. Replace the placeholders in the <code>firebaseConfig</code> object in the JavaScript file with your Firebase project details:</p>
+    <pre><code>const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};</code></pre>
+  </li>
+  <li><strong>Install Firebase CLI:</strong>
+    <pre><code>npm install -g firebase-tools</code></pre>
+  </li>
+  <li><strong>Deploy the app:</strong>
+    <pre><code>firebase init
 firebase deploy</code></pre>
-    </li>
-  </ol>
-  <h2>🙏 Acknowledgments</h2>
-  <ul>
-    <li><a href="https://github.com/parallax/jsPDF">jspdf</a> for PDF generation.</li>
-    <li><a href="https://html2canvas.hertzen.com/">html2canvas</a> for HTML-to-image conversion.</li>
-    <li>Icons and emojis from <a href="https://twemoji.twitter.com/">Twemoji</a>.</li>
-  </ul>
+  </li>
+</ol>
 
-  <h2>🧑‍💻 Creator</h2>
-  <p>
-    Designed and developed by <strong><a href="https://www.linkedin.com/in/dewashish-lambore-927048318/">Dewashish Lambore</a></strong>.
-    Feel free to connect with me on LinkedIn for collaboration opportunities! 🚀
-  </p>
+<h2>📂 Project Structure</h2>
+<pre><code>
+├── public/
+│   ├── index.html          # Main HTML file
+│   ├── script.js           # Core JavaScript functionality
+│   ├── style.css           # Styling
+├── firebase.json           # Firebase configuration
+├── .firebaserc             # Firebase project aliases
+└── README.md               # Project documentation
+</code></pre>
 
-  <h2>📜 License</h2>
-  <p>This project is licensed under the MIT License. See <code>LICENSE</code> for details.</p>
 
-  <footer>
-    <p>© 2024 Eco Harm Calculator. All rights reserved.</p>
-  </footer>
+
+<h2>📋 Usage Instructions</h2>
+<ol>
+  <li>Open the app and select your <strong>branch</strong> and <strong>section</strong> using the interface.</li>
+  <li>The next class, location, and faculty details will be displayed dynamically.</li>
+  <li>Admins can update the news marquee via the modal and store it in Firestore for real-time updates.</li>
+</ol>
+
+<h2>📜 License</h2>
+<p>This project is licensed under the <strong>MIT License</strong>.</p>
+
+<h2>📧 Contact</h2>
+<p>Developed by <strong>Dewashish Lambore</strong>.</p>
+<ul>
+  <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/dewashish-lambore">Dewashish Lambore</a></li>
+  <li><strong>GitHub:</strong> <a href="https://github.com/dewashish-lambore">Dewashish Lambore</a></li>
+</ul>
+
